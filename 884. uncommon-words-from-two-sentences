@@ -1,0 +1,17 @@
+class Solution {
+    public String[] uncommonFromSentences(String s1, String s2) {
+        String str = s1 + " " + s2;
+        String[] temp = str.split("\\s+");
+        Map<String, Integer> hm = new HashMap<>();
+        for (String word : temp) {
+            hm.put(word, hm.getOrDefault(word, 0) + 1);
+        }
+        List<String> lst = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : hm.entrySet()) {
+            if (entry.getValue() == 1) {
+                lst.add(entry.getKey());
+            }
+        }
+        return lst.toArray(new String[0]);
+    }
+}
