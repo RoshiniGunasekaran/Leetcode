@@ -1,0 +1,26 @@
+//1. convert the int[] to the string[]
+//2. sort by the desecding order while join the string
+//3. put into the string builder
+//4. return if the string starts with 0 return 0
+
+
+
+class Solution {
+    public String largestNumber(int[] nums) {
+        int n = nums.length;
+        String str[] = new String[n];
+        for (int i = 0; i < n; i++) {
+            str[i] = String.valueOf(nums[i]);
+        }
+        Arrays.sort(str, (a, b) -> (b + a).compareTo(a + b));
+        StringBuilder sb = new StringBuilder();
+        for (String s : str) {
+            sb.append(s);
+        }
+        String res = sb.toString();
+        if (res.startsWith("0")) {
+            res = "0";
+        }
+        return res;
+    }
+}
