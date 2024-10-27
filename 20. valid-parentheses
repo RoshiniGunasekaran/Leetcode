@@ -7,7 +7,7 @@ class Solution {
     
     private static boolean isMatch(char open, char close) {
         return (open == '(' && close == ')') || 
-               (open == '{' && close == '}') || 
+               (open == '{' && close == '}') ||  
                (open == '[' && close == ']');
     }
 
